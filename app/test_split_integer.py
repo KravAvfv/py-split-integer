@@ -22,10 +22,12 @@ def test_should_add_zeros_when_value_is_less_than_number_of_parts() -> None:
 
 
 def test_difference_between_max_min_in_return_array() -> None:
-    result = split_integer(33, 4)
-    assert max(result) - min(result) <= 1
+    assert max(split_integer(33, 4)) - min(split_integer(33, 4)) <= 1
+
+
+def test_len_correctly() -> None:
+    assert len(split_integer(50, 8)) == 8
 
 
 def test_return_sorted_array() -> None:
-    result = split_integer(13, 4)
-    assert result == sorted(result)
+    assert split_integer(13, 4) == sorted(split_integer(13, 4))
